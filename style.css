@@ -32,7 +32,7 @@
     --size-border-radius: 4px;
     /* Annimation */
     --animation-duration: 300ms;
-    --animation-duration-slow: 650ms;
+    --animation-duration-slow: 600ms;
 }
 
 /*Universal tags*/
@@ -130,18 +130,18 @@ p {
 }
 .navbar__logo__img {
     display: none;
-}
-.navbar__logo__img {
     width: 58px;
     height: 58px;
 }
 .navbar__menu__item {
     font-family: 'kimhwanki';
-    font-size: 36px;
+    font-size: 42px;
     cursor: pointer;
 }
 .navbar__menu__item:hover {
-    font-size: 42px;
+    font-size: 48px;
+    text-decoration: underline; 
+    text-underline-position:under;
 }
 
 /*Section common*/
@@ -153,7 +153,17 @@ p {
 #skills {
     background-color: var(--color-yellow);
 }
-#contact{
+#contact {
     background-color: var(--color-light-white);
     height: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    .home__logo__greenball {
+        width: 200px;
+    }
+    .home__logo__name {
+        height: 80px;
+        top: 20px;
+    }
 }
