@@ -147,7 +147,8 @@ p {
 /*Section common*/
 .section {
     text-align: center;
-    height: 700px;
+    height: 700px; /*최종적으로 높이 수정할 것!*/
+    padding: 16px;
 }
 
 #skills {
@@ -155,9 +156,16 @@ p {
 }
 #contact {
     background-color: var(--color-light-white);
-    height: 350px;
+    height: 225px;
+
 }
 
+.contact__rights{
+    font-size: var(--font-micro);
+}
+.contact__icon{
+    width: 25px;
+}
 @media screen and (max-width: 768px) {
     .home__logo__greenball {
         width: 200px;
