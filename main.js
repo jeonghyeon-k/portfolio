@@ -15,3 +15,16 @@ document.addEventListener('scroll',()=>{
         greenball.classList.remove('active');
     }
 })
+
+// 네비바
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click',(e)=>{
+    const target = e.target;
+    const link = target.dataset.link;
+    scrollIntoView(link)
+})
+
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+}
