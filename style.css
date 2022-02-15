@@ -143,6 +143,14 @@ p {
     text-decoration: underline;
     text-underline-position: under;
 }
+.navbar__toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-black);
+    display: none;
+}
 
 #navbar.navbar--dark {
     background-color: #fbd2aa;
@@ -196,11 +204,27 @@ p {
     width: 25px;
 }
 @media screen and (max-width: 768px) {
+    #navbar.navbar--dark .navbar__toggle-btn {
+        display: block;
+    }
     .home__logo__greenball {
         width: 200px;
     }
     .home__logo__name {
         height: 80px;
         top: 20px;
+    }
+    #navbar.navbar--dark {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #navbar.navbar--dark .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    #navbar.navbar--dark .open{
+        display: block;
     }
 }

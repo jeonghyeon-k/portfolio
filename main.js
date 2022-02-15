@@ -9,6 +9,7 @@ home.style.height = screenheight;
 const greenball = document.querySelector('.home__logo__greenball');
 greenball.classList.add('active');
 document.addEventListener('scroll',()=>{
+    navbarMenu.classList.remove('open')
     if(window.scrollY<10 ){
         greenball.classList.add('active');
     }else{
@@ -21,19 +22,25 @@ const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click',(e)=>{
     const target = e.target;
     const link = target.dataset.link;
+    navbarMenu.classList.remove('open')
     scrollIntoView(link)
 })
 
 // 네비바를 투명하게 만드는 것
+const navbarHeight = navbarMenu.getBoundingClientRect().height;
 const navbar = document.querySelector('#navbar');
-const homeHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll',()=>{
-    if(window.scrollY>homeHeight){
+    if(window.scrollY>navbarHeight){
         navbar.classList.add('navbar--dark');
     }else{
         navbar.classList.remove('navbar--dark');
     }
     
+})
+
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click',()=>{
+    navbarMenu.classList.toggle('open')
 })
 
 function scrollIntoView(selector){
