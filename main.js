@@ -24,6 +24,18 @@ navbarMenu.addEventListener('click',(e)=>{
     scrollIntoView(link)
 })
 
+// 네비바를 투명하게 만드는 것
+const navbar = document.querySelector('#navbar');
+const homeHeight = navbar.getBoundingClientRect().height;
+document.addEventListener('scroll',()=>{
+    if(window.scrollY>homeHeight){
+        navbar.classList.add('navbar--dark');
+    }else{
+        navbar.classList.remove('navbar--dark');
+    }
+    
+})
+
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
