@@ -140,38 +140,91 @@ p {
 }
 .navbar__menu__item:hover {
     font-size: 48px;
-    text-decoration: underline; 
-    text-underline-position:under;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.navbar__toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-black);
+    display: none;
 }
 
+#navbar.navbar--dark {
+    background-color: #fbd2aa;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: all var(--animation-duration) ease-in-out;
+}
+#navbar.navbar--dark .navbar__logo__img {
+    display: block;
+}
+#navbar.navbar--dark .navbar__menu {
+    display: flex;
+}
+#navbar.navbar--dark .navbar__menu__item {
+    padding: 4px 6px;
+    margin: 0 4px;
+}
+#navbar.navbar--dark .navbar__menu__item {
+    font-size: 24px;
+}
 /*Section common*/
 .section {
     text-align: center;
-    height: 700px; /*최종적으로 높이 수정할 것!*/
     padding: 16px;
+}
+#about {
+    height: 700px;
 }
 
 #skills {
     background-color: var(--color-yellow);
+    height: 700px;
 }
 #contact {
     background-color: var(--color-light-white);
     height: 225px;
-
+}
+#projects{
+    height: 700px;
 }
 
-.contact__rights{
+.contact__rights {
     font-size: var(--font-micro);
 }
-.contact__icon{
+.contact__icon {
     width: 25px;
 }
 @media screen and (max-width: 768px) {
+    #navbar.navbar--dark .navbar__toggle-btn {
+        display: block;
+    }
     .home__logo__greenball {
         width: 200px;
     }
     .home__logo__name {
         height: 80px;
         top: 20px;
+    }
+    #navbar.navbar--dark {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #navbar.navbar--dark .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    #navbar.navbar--dark .open{
+        display: block;
     }
 }
