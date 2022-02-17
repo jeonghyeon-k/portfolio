@@ -205,11 +205,13 @@ p {
     overflow-x: scroll;
     overflow-y: hidden;
     display: flex;
+    position: relative;
+    transition: all var(--animation-duration) ease-in;
 }
 .project {
     border: 1px solid #000000;
     position: relative;
-    margin: 20px 40px;
+    margin: 20px;
 }
 
 .project__description {
@@ -247,7 +249,31 @@ p {
     margin-top: 8px;
     background-color: var(--color-dark-white);
 }
-
+#project__btn{
+    width: 65px;
+    position: absolute;
+    top: 40%;
+}
+.listbox__container{
+    position: relative;
+}
+.project__btn-left{
+    display: none;
+    left: 0;
+}
+.project__btn-right{
+    display: none;
+    right: 0;
+}
+.project__btn-left.active{
+    display: block;
+}
+.project__btn-right.active{
+    display: block;
+}
+.project__btn-img{
+    width: 100%;
+}
 
 .project__img {
     width: 250px;
